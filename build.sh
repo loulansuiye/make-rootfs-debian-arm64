@@ -16,7 +16,7 @@ fi
 # Build Debian rootfs for ARCH={armhf,arm64}
 # - Debian armhf = ARMv6/ARMv7
 # - Debian arm64 = ARMv8/Aarch64
-BUILD_ARCH="${BUILD_ARCH:-arm64}"
+BUILD_ARCH="${BUILD_ARCH:-armhf}"
 ROOTFS_DIR="debian-${BUILD_ARCH}"
 
 # Cleanup
@@ -40,14 +40,14 @@ qemu-debootstrap \
 # Use standard Debian apt repositories
 cat << EOM | ${SUDO_CMD} chroot "${ROOTFS_DIR}" \
   tee /etc/apt/sources.list
-deb http://httpredir.debian.org/debian jessie main
-deb-src http://httpredir.debian.org/debian jessie main
+deb http://httpredir.debian.org/debian bookworm main
+deb-src http://httpredir.debian.org/debian bookworm main
 
-deb http://httpredir.debian.org/debian jessie-updates main
-deb-src http://httpredir.debian.org/debian jessie-updates main
+deb http://httpredir.debian.org/debian bookworm-updates main
+deb-src http://httpredir.debian.org/debian bookworm-updates main
 
-deb http://security.debian.org/ jessie/updates main
-deb-src http://security.debian.org/ jessie/updates main
+deb http://security.debian.org/ bookworm/updates main
+deb-src http://security.debian.org/ bookworm/updates main
 EOM
 
 
