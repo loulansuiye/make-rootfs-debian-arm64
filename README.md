@@ -1,8 +1,9 @@
 
 [![Build Status](https://travis-ci.org/DieterReuter/make-roofs-debian-arm64.svg)](https://travis-ci.org/DieterReuter/make-roofs-debian-arm64)
 
-# make-roofs-debian-arm64
-Create and package a Debian rootfs for ARM64/AARCH64
+# rootfs-bookworm-armhf
+
+Create and package a Debian rootfs for ARMhf 
 
 This rootfs builder is meant to run on TravisCI only (issues with debootstrap on CircleCI).
 
